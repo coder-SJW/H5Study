@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        window.onload=function () {
+            let name=document.getElementById("name");
+            let btn=document.getElementById("btn");
+
+            btn.onclick=function(){
+                name.setCustomValidity("");
+                if(name.validity.valueMissing){
+                    name.setCustomValidity("大哥，用户名不能为空！！！");
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="success.html" method="post">
+        用户名 :
+        <input type="text" id="name" required>
+
+        <input id="btn" type="submit">
+    </form> 
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function check()
+        {
+            let number = document.getElementById("number");
+            let result = document.getElementById("result");
+            let flag = number.checkValidity();
+            if(flag)
+            {
+                result.innerHTML = "数值格式正确";
+            }
+            else
+            {
+                result.innerHTML = "数值格式不正确";
+            }
+        }
+    </script>
+</head>
+<body>
+        数值 :
+        <input type="text" id="number" onblur="check()" pattern="[0-4]{3}">
+        <span id="result"></span>
+</body>
+</html>
