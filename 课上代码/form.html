@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload=function(){
+            
+        }
+    </script>
+</head>
+<body>
+    <form oninput="x.value=a.value" action="">
+        <fieldset>
+            <legend>search:</legend>
+            <input type="search"> 
+        </fieldset>
+        <fieldset>
+            <!--自带邮箱格式类型验证-->
+            <legend>email:</legend>
+            <input type="email">
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <!--自带url格式类型验证-->
+            <legend>url:</legend>
+            <input type="url">
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <legend>电话：</legend>
+            <input type="tel">
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <legend>数字：</legend>
+            <input type="number">
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <legend>范围：</legend>
+            <input name="a" type="range" value="0">
+            <output name="x">0</output>
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <legend>日期：</legend>
+            <input type="date">
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <legend>日期（month）：</legend>
+            <input type="month">
+    
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <legend>week</legend>
+            <input type="week">
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <legend>时间：</legend>
+            <input type="time">
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <legend>日期+时间：</legend>
+            <input type="datetime">
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <legend>日期+时间（本地）：</legend>
+            <input type="datetime-local">
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <legend>颜色：</legend>
+            <input type="color">
+            <input type="submit">
+        </fieldset>
+    </form>
+
+    <!--等价select标签-->
+    下拉：<input type="text" list="selectList" id="t">
+    <datalist id="selectList">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </datalist>
+
+    <!--表单验证-->
+    <!--
+        格式验证：type属性
+        不能为空：required
+        字符长度验证：minlength、maxlength
+        数字范围验证：min、max
+        步长验证： step
+        正则表达式：pattern属性
+        禁止表单验证：form标签+novalidate属性
+    -->
+    <form action="">
+        不能为空：<input type="text" required>
+        长度限制：<input type="text" minlength="2" maxlength="5">
+        数字范围：<input type="number" min="1" max="10">
+        步长：<input type="number" min="1" max="100" step="10">
+        正则表达式：<input type="text" pattern="[0~3]{3}">
+        <input type="submit">
+    </form>
+</body>
+</html>
