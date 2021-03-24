@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <form action="">
+    <form action="" id="stuform">
         <fieldset>
             <legend>学生档案</legend>
-        学生姓名<br>
-        <input type="text" placeholder="请输入学生姓名（必填）"><br>
-        手机号<br>
-        <input type="text" placeholder="请输入手机号（必填）"><br>
-        邮箱<br>
-        <input type="text" placeholder="请输入电子邮箱地址"><br>
-        所属学院<br>
-        <input type="text" list="selectlist" placeholder="请选择学院（必填）"><br>
-        <datalist id="selectlist">
-            <option>软件学院</option>
-            <option>其它学院</option>
-        </datalist>
-        入学成绩<br>
-        <input type="text" placeholder="请输入入学成绩（必填）"><br>
-        入学日期<br>
-        <input type="date" placeholder="请输入入学成绩（必填）"><br>
-        毕业日期<br>
-        <input type="date" placeholder="请输入入学成绩（必填）"><br>
-    </fieldset>
+            学生姓名<br> <input type="text" placeholder="请输入学生姓名（必填）" required><br>
+            手机号<br> <input type="tel" placeholder="请输入手机号（必填）" required pattern="[0-9]{11}"><br> 
+            邮箱<br> <input type="email" placeholder="请输入电子邮箱地址"><br> 
+            所属学院<br> <input type="text" list="selectlist" placeholder="请选择学院（必填）" required><br>
+            <datalist id="selectlist">
+                <option>软件学院</option>
+                <option>其它学院</option>
+            </datalist> 
+            入学成绩<br> <input type="number" placeholder="请输入入学成绩（必填）" step="0.5" required min="0" max="750"><br> 
+            入学日期<br> <input type="date" required><br> 
+            毕业日期<br> <input type="date" required><br>
+            <input type="submit" value="保存">
+        </fieldset>
     </form>
 </body>
+<style type="text/css">
+*{
+    font-weight: 500;
+}
+#stuform{
+    width: 30%;
+    margin: auto;
+    background-color: #F2F2F2;
+}
+input{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+</style>
 </html>
