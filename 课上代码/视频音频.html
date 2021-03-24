@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload=function(){
+            let video = document.getElementById("video");
+            let video_start = document.getElementById("video_start");
+            let video_close = document.getElementById("video_close");
+            video_start.onclick = function(){
+                video.
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <!--
+        视频
+        自动播放：autoplay属性，必须有静音属性muted
+        循环播放：loop属性
+        静音：muted
+        是否自动加载：preload
+        设置视频封面：poster
+        宽高：weight，height
+        html5media.js脚本
+    -->
+    <video src="../课件/3-1课程资料/案例源代码/2.HTML5视频播放/let-it-go.mp4" id="video"  muted poster="../课件/3-1课程资料/案例源代码/2.HTML5视频播放/cover.jpg"></video>
+    <input type="button" id="video_start" value="开始">
+    <input type="button" id="video_close" value="暂停">
+    <!--
+        音频
+        相对于视频少了宽高、poster属性
+    -->
+    <audio src="../课件/3-1课程资料/案例源代码/3.HTML5音频播放/YouAreMySunshine.mp3"></audio>
+
+    <audio>
+        <source>
+        <source>
+    </audio>
+    <video>
+        <source>
+        <source>
+    </video>
+
+</body>
+</html>
