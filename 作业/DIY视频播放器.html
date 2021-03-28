@@ -3,8 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>DIY视频播放器</title>
+    <script type="text/javascript">
+        window.onload = function (){
+            //视频
+            let video = document.getElementById("video");
+            //按钮
+            let btn_start = document.getElementById("btn_start");
+            let btn_close = document.getElementById("btn_close");
+            let btn_muted = document.getElementById("btn_muted");
+            //let button_fullView = document.getElementById("button_fullView");
+            let btn_speed = document.getElementById("btn_speed");
+            let btn_slow = document.getElementById("btn_slow");
+            let btn_front = document.getElementById("btn_front");
+            let btn_back = document.getElementById("btn_back");
+            /*let button_start = document.getElementById("button_start");*/
+            //操作
+            btn_start.onclick = function (){
+                video.play();
+            }
+            btn_close.onclick = function (){
+                video.pause();
+            }
+            btn_muted.onclick = function (){
+                if (video.muted == true){
+                    video.muted = false;
+                }else{
+                    video.muted = true;
+                }
+            }
+            btn_speed.onclick = function (){
+                if(video.playbackRate < 4){
+                    video.playbackRate = video.playbackRate + 1;
+                }else {
+                    video.playbackRate = 1;
+                }
+            }
+            btn_slow.onclick = function () {
+
+            }
+            btn_front.onclick = function () {
+                video.currentTime = video.currentTime + 5;
+            }
+            btn_back.onclick = function () {
+                if(video.currentTime > 5){
+                    video.currentTime = video.currentTime - 5;
+                }
+            }
+        }
+    </script>
 </head>
 <body>
+    <div style="width: 500px;margin-left: auto;margin-right: auto">
+        <video src="fun.mp4" id="video"></video>
+        <input type="button" id="btn_start" value="播放">
+        <input type="button" id="btn_close" value="暂停">
+        <input type="button" id="btn_muted" value="静音">
+        <input type="button" value="全屏">
+        <input type="button" id="btn_speed" value="加速">
+        <input type="button" id="btn_slow" value="减速">
+        <input type="button" id="btn_front" value="快进5秒">
+        <input type="button" id="btn_back" value="后退5秒">
+    </div>
+
 
 </body>
 </html>
