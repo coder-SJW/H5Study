@@ -97,6 +97,19 @@
             context4_4_3.fillStyle = "red";
             context4_4_3.fill();
 
+            //制作画布
+            let canvas5 = document.getElementById("canvas5");
+            let centext5 = canvas5.getContext("2d");
+            canvas5.onmousemove = function (event){
+
+                    let x = event.offsetX;
+                    let y = event.offsetY;
+                    centext5.strokeStyle = "blue";
+                    centext5.beginPath();
+                    centext5.rect(x,y,1,1);
+                    centext5.stroke();
+
+            }
 
         }
     </script>
@@ -112,6 +125,9 @@
         <p>您的浏览器不支持canvas画布</p>
     </canvas>
     <canvas id="canvas4" width="430px">
+        <p>您的浏览器不支持canvas画布</p>
+    </canvas>
+    <canvas id="canvas5" width="430px">
         <p>您的浏览器不支持canvas画布</p>
     </canvas>
 </body>
