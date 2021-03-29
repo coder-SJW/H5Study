@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function (){
+            let canvas = document.getElementById("canvas");
+            //获取绘图上下文
+            let context = canvas.getContext("2d");
+            //设置颜色
+            context.strokeStyle = "blue";
+            //设计路径
+            context.beginPath();
+            context.rect(20,20,30,35);
+            //画图形
+            context.stroke();
+            //填充
+            context.fill()
+
+            //点击画布画矩形
+            let canvas2 = document.getElementById("canvas2");
+            //获取绘图上下文
+            let context2 = canvas2.getContext("2d");
+            context2.strokeStyle = "blue";
+            canvas2.onclick = function(event) {
+                let x = event.offsetX;
+                let y  =event.offsetY;
+                context2.strokeRect(x,y,10,10);
+            }
+
+            //绘制三角形
+            let canvas3 = document.getElementById("canvas3");
+            let context3 = canvas3.getContext("2d");
+            context3.strokeStyle = "blue";
+            context3.lineWidth = 10;//线宽
+            context3.beginPath();
+            context3.moveTo(20,20);
+            context3.lineTo(100,20);
+            context3.lineTo(20,100);
+            context3.closePath();//闭合图形
+            context3.stroke();
+
+            //制作圆
+            let canvas4 = document.getElementById("canvas4");
+            let context4 = canvas4.getContext("2d");
+            context4.strokeStyle = "blue";
+            context4.beginPath();
+            context4.arc(80,80,50,0,2*Math.PI,true);
+            context4.stroke();
+
+            let context4_2 = canvas4.getContext("2d");
+            context4_2.strokeStyle = "blue";
+            context4_2.beginPath();
+            context4_2.arc(150,80,50,0,Math.PI/2,false);
+            context4_2.closePath();
+            context4_2.stroke();
+
+            let context4_3 = canvas4.getContext("2d");
+            context4_3.strokeStyle = "blue";
+            context4_3.beginPath();
+            context4_3.moveTo(220,80);
+            context4_3.arc(220,80,50,0,Math.PI/2,false);
+            context4_3.closePath();
+            context4_3.stroke();
+            //
+            let context4_4_1 = canvas4.getContext("2d");
+            context4_4_1.strokeStyle = "blue";
+            context4_4_1.beginPath();
+            context4_4_1.moveTo(350,80);
+            context4_4_1.arc(350,80,50,0,2*Math.PI*0.3,false);
+            context4_4_1.closePath();
+            context4_4_1.stroke();
+            context4_4_1.fillStyle = "blue";
+            context4_4_1.fill();
+            let context4_4_2 = canvas4.getContext("2d");
+            context4_4_2.strokeStyle = "blue";
+            context4_4_2.beginPath();
+            context4_4_2.moveTo(350,80);
+            context4_4_2.arc(350,80,50,2*Math.PI*0.3,2*Math.PI*0.6,false);
+            context4_4_2.closePath();
+            context4_4_2.stroke();
+            context4_4_2.fillStyle = "green";
+            context4_4_2.fill();
+            let context4_4_3 = canvas4.getContext("2d");
+            context4_4_3.strokeStyle = "blue";
+            context4_4_3.beginPath();
+            context4_4_3.moveTo(350,80);
+            context4_4_3.arc(350,80,50,2*Math.PI*0.6,2*Math.PI,false);
+            context4_4_3.closePath();
+            context4_4_3.stroke();
+            context4_4_3.fillStyle = "red";
+            context4_4_3.fill();
+
+
+        }
+    </script>
+</head>
+<body>
+    <canvas id="canvas">
+        <p>您的浏览器不支持canvas画布</p>
+    </canvas>
+    <canvas id="canvas2" >
+        <p>您的浏览器不支持canvas画布</p>
+    </canvas>
+    <canvas id="canvas3">
+        <p>您的浏览器不支持canvas画布</p>
+    </canvas>
+    <canvas id="canvas4" width="430px">
+        <p>您的浏览器不支持canvas画布</p>
+    </canvas>
+</body>
+</html>
