@@ -17,10 +17,11 @@
             context.strokeStyle = "blue";
             //设计路径
             context.beginPath();
-            context.rect(20,20,30,35);
+            context.rect(20,20,60,65);
             //画图形
             context.stroke();
             //填充
+            context.fillStyle = "yellow";
             context.fill()
 
             //点击画布画矩形
@@ -108,9 +109,9 @@
                     centext5.beginPath();
                     centext5.rect(x,y,1,1);
                     centext5.stroke();
-
             }
 
+            //
         }
     </script>
 </head>
@@ -124,10 +125,10 @@
     <canvas id="canvas3">
         <p>您的浏览器不支持canvas画布</p>
     </canvas>
-    <canvas id="canvas4" width="430px">
+    <canvas id="canvas4" width="430">
         <p>您的浏览器不支持canvas画布</p>
     </canvas>
-    <canvas id="canvas5" width="430px">
+    <canvas id="canvas5" width="430">
         <p>您的浏览器不支持canvas画布</p>
     </canvas>
 </body>

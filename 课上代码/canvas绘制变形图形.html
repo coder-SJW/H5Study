@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function (){
+            //translate(x,y) 平移
+            let canvas = document.getElementById("canvas");
+            let context = canvas.getContext("2d");
+            context.fillStyle = "blue";
+            for (let i = 0; i < 15; i++) {
+                context.fillRect(0,0,10,10);
+                context.translate(10,10);
+            }
+
+            //scale(x,y) 缩放：操作坐标系
+            let canvas2 = document.getElementById("canvas2");
+            let context2 = canvas2.getContext("2d");
+            context2.strokeStyle = "blue"
+            context2.strokeRect(5,5,25,25);
+            //放大2倍
+            context2.scale(2,2);
+            context2.strokeRect(5,5,25,25);
+            //再放大2倍
+            context2.scale(2,2);
+            context2.strokeRect(5,5,25,25);
+            //再放大2倍
+            context2.scale(2,2);
+            context2.strokeRect(5,5,25,25);
+
+            //rotate(弧度) 旋转
+            let canvas3 = document.getElementById("canvas3");
+            let context3 = canvas3.getContext("2d");
+            context3.fillStyle = "blue";
+            context3.fillRect(80,30,100,40);
+            //旋转30度
+            context3.rotate(30*Math.PI/180);
+            context3.fillStyle = "red";
+            context3.fillRect(80,30,100,40);
+
+            //坐标系的保存和恢复
+            //context.save():保存canvas的状态
+            //context.restore():恢复canvas之前的状态
+
+            //大风车
+            let canvas4  = document.getElementById("canvas4");
+            let context4 = canvas4.getContext("2d");
+            context4.strokeStyle = "blue";
+            context4.translate(140,70);
+            for (let i = 0; i < 5; i++) {
+                context4.rotate(72*Math.PI/180);
+                context4.strokeRect(0,0,50,25);
+            }
+
+
+            //drawimage():引入图片
+            //drawimage(img,x,y)
+            let img1 = new Image();
+            img1.src = "images/liulian.jpg";
+            let canvas5 = document.getElementById("canvas5");
+            let context5 = canvas5.getContext("2d");
+            img1.onload = function (){
+                context5.drawImage(img1,0,0);//图片加载完成之后
+            }
+            //drawimage(img,x,y,width,height)
+            let img2 = new Image();
+            img2.src = "images/li.png";
+            let canvas5_2 = document.getElementById("canvas5_2");
+            let context5_2 = canvas5_2.getContext("2d");
+            img2.onload = function (){
+                context5_2.drawImage(img2,0,0,150,150);//图片加载完成之后
+            }
+            //drawimage(img,sx,sy,swidth,sheight,x,y,width,height)
+            let img3 = new Image();
+            img2.src = "images/li.png";
+            let canvas5_3 = document.getElementById("canvas5_3");
+            let context5_3 = canvas5_2.getContext("2d");
+            img2.onload = function (){
+                context5_3.drawImage(img3,0,0,150,150);
+            }
+
+
+            //createPattern(img,type):设置图片在画布中的填充模式
+            //type：1、repeat 在水平、垂直方向上平铺
+            //      2、repeat-x 在水平方向上平铺
+            //      3、repeat-y 在垂直方向上平铺
+            //      4、no-repeat 不平铺
+            let canvas6 = document.getElementById("canvas6");
+            let context6 = canvas5.getContext("2d");
+            let ptn = context6.createPattern(img,"repeat-x");
+            context6.fillStyle = ptn;
+
+            //filltext(text,x,y,maxWidth):引入实心字
+            //strokeText(text,x,y,maxWidth):引入空心字
+        }
+    </script>
+</head>
+<body>
+    <canvas id="canvas" width="150"></canvas>
+    <canvas id="canvas2" ></canvas>
+    <canvas id="canvas3" ></canvas>
+    <canvas id="canvas4" ></canvas>
+    <canvas id="canvas5" width="400" height="300"></canvas>
+    <canvas id="canvas5_2" width="400" height="300"></canvas>
+    <canvas id="canvas5_3" width="400" height="300"></canvas>
+    <canvas id="canvas6" ></canvas>
+</body>
+</html>
